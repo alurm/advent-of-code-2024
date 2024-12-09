@@ -15,4 +15,4 @@ let scan h =
   to_array left, to_array right
 
 let scan_path path =
-  In_channel.with_open_bin path @@ fun h -> scan @@ Scanf.Scanning.from_channel h
+  In_channel.with_open_bin path @@ Fun.compose scan Scanf.Scanning.from_channel
