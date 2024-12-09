@@ -1,0 +1,13 @@
+(library
+ (name lib)
+ (modules lib))
+
+(executable
+ (name part_1)
+ (libraries lib)
+ (modules part_1))
+
+(executable
+ (name part_2)
+ (libraries lib)
+ (modules part_2))
