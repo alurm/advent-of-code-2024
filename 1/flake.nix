@@ -6,9 +6,9 @@
   };
 
   outputs = { self, flake-utils, opam-nix }: flake-utils.lib.eachDefaultSystem (system: let
-    name = "advent-of-code";
+    name = "aoc";
   in {
-    defaultPackage.${system} = (opam-nix.buildOpamProject {} name ./. {
+    defaultPackage = (opam-nix.lib.${system}.buildOpamProject {} name ./. {
       ocaml-base-compiler = "*";
     }).name;
   });
